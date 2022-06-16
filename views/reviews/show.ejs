@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Review</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1>
+        <%= review.movieTitle %>
+    </h1>
+    <h2>
+        <%= review.stars %> Stars
+    </h2>
+    <p>
+        <%= review.review %>
+    </p>
+    <br>
+    <p>
+        Review by <%= review.username %>
+    </p>
+    <a href="/reviews" type="button" class="btn btn-primary">Back to Index</a>
+    <a href="/reviews/<%= review.id %>/edit" type="button" class="btn btn-secondary">Edit Review</a>
+    <form method="POST" action="/reviews/<%=review.id%>?_method=DELETE">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+</body>
+
+</html>
